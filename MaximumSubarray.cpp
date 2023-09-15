@@ -7,24 +7,32 @@ class Solution
 public:
     int maxSubArray(vector<int> &nums)
     {
-        int maxSum = 0;
-        if(nums.size()==1)
+        auto it1 = nums.begin(), it2 = nums.begin();
+        int sum = *it2, maxSum = *it2;
+        while (it1 != nums.end())
         {
-            return nums[0];
-        }
-        for (unsigned int i = 0; i < nums.size(); i++)
-        {
-            for (unsigned int j = i + 1; j < nums.size(); j++)
+            if (nums.size() == 1)
             {
-                int sum = 0;
-                for (unsigned int k = i; k <= j; k++)
+                return nums[0];
+            }
+            else
+            {
+                it2++;
+                if (it2 == nums.end())
                 {
-                    sum = sum + nums[k];
+                    it1++;
+                    if(it1==nums.end())
+                    {
+                        return maxSum;
+                    }
+                    it2 = it1;
+                    sum = *it2;
                 }
-                if (sum > maxSum)
+                else
                 {
-                    maxSum = sum;
+                    sum = sum + *it2;
                 }
+                maxSum = max(sum, maxSum);
             }
         }
         return maxSum;
@@ -44,7 +52,8 @@ int main()
     }
     Solution s;
     int result = s.maxSubArray(nums);
-    cout<<result;
+    cout << result;
     return 0;
 }
 // 9 -2 1 -3 4 -1 2 1 -5 4
+// 5 5 4 -1 7 8
