@@ -1,7 +1,26 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+//OPTIMAL SOLUTION TIME COMPLEXITY = O(N) SPACE COMPLEXITY = O(1)
+class Solution
+{
+public:
+    int maxSubArray(vector<int> &nums)
+    {
+        int current_sum = nums[0], max_sum = nums[0];
 
+        for (unsigned int i = 1; i < nums.size(); ++i)
+        {
+            current_sum = max(nums[i], current_sum + nums[i]);
+            max_sum = max(max_sum, current_sum);
+        }
+
+        return max_sum;
+    }
+};
+
+
+/*o(N*2) TLE
 class Solution
 {
 public:
@@ -38,6 +57,8 @@ public:
         return maxSum;
     }
 };
+*/
+
 
 int main()
 {
