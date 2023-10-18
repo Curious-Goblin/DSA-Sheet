@@ -68,7 +68,6 @@ public:
 
             while (front < back)
             {
-
                 int sum = num[front] + num[back];
 
                 // Finding answer which start from number num[i]
@@ -99,7 +98,6 @@ public:
             while (i + 1 < num.size() && num[i + 1] == num[i])
                 i++;
         }
-
         return res;
     }
 };
