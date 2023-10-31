@@ -19,6 +19,7 @@ using namespace std;
 //             vector<int> temp;
 //             temp.push_back(0);
 //             result.push_back(temp);
+//             return result;
 //         }
 //         else
 //         {
@@ -40,15 +41,17 @@ using namespace std;
 //                 }
 //             }
 //         }
-// for (unsigned int i = 0; i < result.size(); i++)
-// {
-//     sort(result[i].begin(), result[i].end());
-// }
-// sort(result.begin(), result.end());
-// result.erase(std::unique(result.begin(), result.end()), result.end());
-// return result;
+//         for (unsigned int i = 0; i < result.size(); i++)
+//         {
+//             sort(result[i].begin(), result[i].end());
+//         }
+//         sort(result.begin(), result.end());
+//         result.erase(std::unique(result.begin(), result.end()), result.end());
+//         return result;
 //     }
 // };
+
+// OPTIMAL SOLUTION
 class Solution
 {
 public:
